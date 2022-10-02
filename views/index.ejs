@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Vincent">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Dashboard Login</title>
+</head>
+    <body>
+        <form action="/api/users/login" method="post" class="MainForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br/>
+            <label for="password">Password:</label>
+            <input type="password" id="username" name="password">
+            <br/>
+            <button type="submit">Login</button>
+        </form>
+        <a href="/register">register here</a>
+    </body>
+</html>
