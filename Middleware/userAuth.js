@@ -15,6 +15,7 @@ const db = require("../Models");
       where: {
         username: req.body.username,
       },
+    
     });
     console.log("middleware_debug",username);
     //if username exist in the database respond with a status of 409
