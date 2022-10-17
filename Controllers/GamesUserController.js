@@ -27,9 +27,9 @@ const signup = async (req, res) => {
 
      res.cookie("jwt", token, { maxAge: 1 * 24 * 60 * 60, httpOnly: true });
      console.log("user", JSON.stringify(user, null, 2));
-     console.log(token);
+     console.log(token);  
      //send users details
-     return res.status(201).send(user);
+     return res.redirect("/dashboard").status(200);
    } else {
      return res.status(409).send("Details are not correct");
    }
@@ -42,7 +42,7 @@ const signup = async (req, res) => {
 //login authentication
 
 const login = async (req, res) => {
- try {
+try {
 const { username, password } = req.body;
 
    //find a user by their email
@@ -70,7 +70,7 @@ const { username, password } = req.body;
        console.log("user", JSON.stringify(user, null, 2));
        console.log(token);
        //send user data
-       return res.status(201).send(user);
+       return res.redirect("/dashboard")
      } else {
        return res.status(401).send("Authentication failed");
      }
@@ -82,7 +82,22 @@ const { username, password } = req.body;
  }
 };
 
+const dashboard= async (req, res)=>{
+  try{
+    const users= await User.findAll();
+
+    users_json=JSON.stringify(users)
+    console.log(users_json);
+    return res.json(users);
+  }
+  catch(error){
+    console.log(error);
+  }
+
+}
+
 module.exports = {
  signup,
  login,
+ dashboard,
 };

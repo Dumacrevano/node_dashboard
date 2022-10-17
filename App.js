@@ -34,6 +34,9 @@ app.get("/register",function(req,res){
    res.render("register");
 })
 
+app.get("/kucing",function(req,res){
+    res.render("kucing");
+})
 
 
 //dashboard

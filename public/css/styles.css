@@ -17,3 +17,20 @@ body{
     color:whitesmoke;
     margin-right:5px;
 }
+
+.xd{
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    background-color: green;
+}
+
+.notdiv
+{
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    background-color: green;
+}
